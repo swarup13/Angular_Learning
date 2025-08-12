@@ -1,0 +1,14 @@
+
+
+<app-alert-box [classType]="'Success'" [message]="'from  parent comp (structural) pass msg to child'"></app-alert-box>
+
+<app-reuse-button (btnClick)="paretntBtn($event)" [className]="'btn btn-success'" [text]="'Click Me!'"></app-reuse-button>
+
+<div *ngIf="visiblity" class="ms-4" style=" width: 90px; height: 90px; background-color: red; ">
+</div>
+<div >
+    <button class="btn btn-success mt-5 ms-2" (click)="isVisible()">SHOW</button>
+    <button class="btn btn-danger mt-5 ms-5" (click)="notVisible()">REMOVE</button>
+</div>
+  
+

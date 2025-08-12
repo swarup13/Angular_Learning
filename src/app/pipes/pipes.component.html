@@ -1,0 +1,41 @@
+<p>pipes works!</p>
+
+
+<h1>pipe is used for transform the data in html template</h1>
+
+<div class="row">
+<h4>this are the Default pipe in angular  date , uppercase , lowercase , titlecase , json , async , currency , percentage</h4>
+      <div class="col-6">
+        <p>before use pipe small -> {{name}}</p>
+        <p>After pipe to capital we use | uppercase  -> {{name | uppercase}}</p>
+      </div>
+
+      <div class="col-6">
+        <p>to make 👉 | lowercase {{name | lowercase}}</p>
+
+        <p>to make first letter capital 👉  | titlecase -> {{name | titlecase }}</p>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+
+    <p>Date object give --- > {{todayIs}}</p>
+    <p>if we want only date then ->  {{todayIs | date}}</p>
+    <p>for dd-mon-yy  - >   {{todayIs | date:'dd-MMM-yy'}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+<h4>to print obj in json string format we json pipe</h4>
+    {{obj | json}}
+  </div>
+</div>
+
+
+<div class="row">
+  <h3>Custom Pipe</h3>
+  <p>if i try to print empty value in ui i dont see anything{{obj.dob}}</p>
+  <p>After using custom pipe →{{obj.dob | customPipe }}</p>
+</div>

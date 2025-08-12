@@ -1,0 +1,23 @@
+<p>get1-api works!</p>
+
+
+<button class="btn btn-success" (click)="getAllUser()">Click Me!</button>
+
+<select class="form-select mt-4">
+    <option *ngFor="let item of name">
+        <strong>{{item.name}}</strong>
+    </option>
+</select>
+
+
+
+<div style="margin-top: 20%;">
+    <button class="btn btn-danger mt-3" (click)="getCustomer()">Get Customers</button>
+</div>
+
+
+<select class="form-select mt-3">
+    <option *ngFor="let i of details">
+        <strong>{{i.address?.state}}</strong>
+    </option>
+</select>

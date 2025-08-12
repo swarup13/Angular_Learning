@@ -1,0 +1,40 @@
+<p>signal works!</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            {{course()}}
+        </div>
+
+        <div class="col-3">
+            {{count()}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-danger mt-3" (click)="changeCourse()">Change Course NAme</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-success" (click)="changeCount()">change Count</button>
+        </div>
+    </div>
+
+    <div class="row ms-4 mt-4 ">
+        {{courseCount()}}
+    </div>
+
+    <div class="row">
+        Array -- {{arr()}}
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-warning" (click)="addCity('banglore')">Add City</button>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,70 @@
+
+<div class="container">
+    
+
+       <div class="row">
+
+             <div class="col-12">
+
+                <h4>One Way Data Binding</h4>
+                <h5>Interpolation</h5>
+                <h6>pass data from .ts to html</h6>
+
+                <p>{{name}}</p>
+<p>below field type of input come from .ts </p>
+                <input type="{{test}}">
+
+                            <!-- 🧠 Golden Rule:
+If you're binding text inside tags → use {{varName }}
+If you're binding attributes → use [attrName] or [property] -->
+
+             </div>
+       </div>
+
+
+       <div class="row">
+
+        <div class="col-12" style="color: blueviolet;">
+             <h5 >Property Binding</h5>
+             <h6>in property binding we can bind whichever proprty present in Dom</h6>
+            <input type="text" [value]="test">
+            <div style="width:10px; height:10px; margin-left: 35% ;">
+                <img [src]="imgUril" >
+            </div>
+            
+        </div>
+
+       </div>
+
+       <div class="row">
+        <div class="col-12 mb-2 mt-6">
+            <h5 style="color: blueviolet;">event binding </h5>
+            <h6>in event binding we pass data from html to component</h6>
+            <button class="btn btn-success" (click)="onSubmit('welcome form angular')">Click Me!</button>
+        </div>
+       </div>
+
+
+       <div class="row">
+        <div class="col-12">
+            <h5 style="color: blueviolet;">Two Way Data Binding</h5>
+            <h6>data fows from both the side & we can use only for inputs </h6>
+            <input type="text" [(ngModel)]="name">
+
+            <select [(ngModel)]="drpselect">
+                <option value="">select</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Goa">Goa</option>
+                <option value="Dubai">Dubai</option>
+            </select>
+        </div>
+       </div>
+
+       <div class="row">
+        <div class="col-12">
+
+            <p>{{city()}}</p>
+            <button (click)="onCityChange()">change city</button>
+        </div>
+       </div>
+</div>

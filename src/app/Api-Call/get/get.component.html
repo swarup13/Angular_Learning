@@ -1,0 +1,16 @@
+
+
+
+<!-- <p>{{details | json}}</p> -->
+
+
+<div class="card bg-light text-dark" *ngFor="let item of details let i = index"
+>
+    <div class="card-body" [ngClass]="{'bg-warning': i%2 == 1, 'bg-success': i%2 == 0}">
+
+        <p><strong>{{item.id}}</strong></p>
+        <p><strong>{{item.title}}</strong></p>
+        <p><strong>{{item.body}}</strong></p>
+    </div>
+  </div>
+

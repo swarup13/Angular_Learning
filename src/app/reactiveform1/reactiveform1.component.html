@@ -1,0 +1,133 @@
+<p>reactiveform1 works!</p>
+
+
+<div class="container">
+    <form [formGroup]="studentObj" (ngSubmit)="saveDetails()">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{
+                'is-invalid': studentObj.controls['name'].invalid && (studentObj.controls['name'].touched || studentObj.controls['name'].dirty)
+            }">
+
+                <div class="text-danger mt-1">
+
+                    <span
+                        *ngIf="(studentObj.controls['name'].touched || studentObj.controls['name'].dirty) && studentObj.controls['name'].errors?.['required']">
+                        This Field is Required
+                    </span>
+
+                    <span
+                        *ngIf="(studentObj.controls['name'].touched || studentObj.controls['name'].dirty) && studentObj.controls['name'].errors?.['minlength']">
+                        The Length Should be More Than 3 characters
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email" [ngClass]="{
+                    'is-invalid': (studentObj.controls['email'].dirty || studentObj.controls['email'].touched) && studentObj.controls['email'].invalid
+                }">
+
+                <div class="text-danger">
+
+                    <span
+                        *ngIf="(studentObj.controls['email'].dirty || studentObj.controls['email'].touched) && studentObj.controls['email'].errors?.['required']">
+
+                        This Field is Required
+
+                    </span>
+                    <span
+                        *ngIf="(studentObj.controls['email'].dirty || studentObj.controls['email'].touched) && studentObj.controls['email'].errors?.['email']">
+
+                        please enter Valid Email
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" formControlName="password" [ngClass]="{
+                    'is-invalid': studentObj.controls['password'].invalid && (studentObj.controls['password'].touched || studentObj.controls['password'].dirty)
+                }">
+
+
+                <div class="text-danger">
+                    <span
+                        *ngIf="(studentObj.controls['password'].touched || studentObj.controls['password'].dirty) && studentObj.controls['password'].errors?.['required']">
+                        This Field is Required
+                    </span>
+                    <span
+                        *ngIf="(studentObj.controls['password'].touched || studentObj.controls['password'].dirty) && studentObj.controls['password'].errors?.['maxlength']">
+
+                        Password is Max 6 charachters
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" formControlName="address" [ngClass]="{
+                    'is-invalid': studentObj.controls['address'].invalid && (studentObj.controls['address'].touched || studentObj.controls['address'].dirty)
+                }">
+
+                <div class="text-danger">
+                    <span
+                        *ngIf="(studentObj.controls['address'].touched || studentObj.controls['address'].dirty) && studentObj.controls['address'].errors?.['required']">
+                        This Field is Required
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <label class="form-label">Gender</label>
+                <div class="form-check form-check-inline ms-2">
+                    <input type="radio" class="form-check-input" name="gender" value="Male" formControlName="gender">
+                    MALE
+                </div>
+
+                <div class="form-check form-check-inline ms-3">
+                    <input type="radio" class="form-check-input" name="gender" value="FeMale" formControlName="gender">
+                    FEMALE
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <button class="mt-5 ms-5 btn btn-primary" type="submit">
+                Save Details
+            </button>
+        </div>
+    </form>
+
+
+    <!--  to check entire json object-->
+    <!-- {{this.studentObj.value| json}} -->
+     
+    <!-- <div *ngIf="isSubmit" class="card border-success mb-3 mt-5 ms-6" style="max-width: 18rem;">
+        <div class="card-header">Details</div>
+        <div class="card-body text-success">
+            <p>{{studentObj.value.name}}</p>
+            <p>{{studentObj.value.email}}</p>
+            <p>{{studentObj.value.password}}</p>
+            <p>{{studentObj.value.gender}}</p>
+
+        </div>
+    </div> -->
+
+    <div *ngFor="let entry of submittedEntries" class="card border-success mb-3 mt-5 ms-6" style="max-width: 18rem;">
+        <div class="card-header">Details</div>
+        <div class="card-body text-success">
+            <p>{{ entry.name }}</p>
+            <p>{{ entry.email }}</p>
+            <p>{{ entry.password }}</p>
+            <p>{{ entry.gender }}</p>
+        </div>
+    </div>
+
+</div>
+
+
+<footer>
+    <div style="margin-top: 40%;">
+    <button class="btn btn-warning mt-4" [routerLink]="['/reactiveform2']" routerLinkActive="router-link-active" >To Navigate Reactive Form 2</button>
+</div>
+</footer>

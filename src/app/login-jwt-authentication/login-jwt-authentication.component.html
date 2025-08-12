@@ -1,0 +1,29 @@
+<p>login-jwt-authentication works!</p>
+
+
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-outline mb-4">
+    <label class="form-label">Email address</label>
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      [(ngModel)]="loginObj.EmailId"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      [(ngModel)]="loginObj.Password"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Login</button>
+</form>
+

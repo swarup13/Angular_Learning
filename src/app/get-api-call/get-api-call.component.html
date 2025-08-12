@@ -1,0 +1,9 @@
+<p>get-api-call works!</p>
+
+
+<button class="bg-primary" (click)="getAllData()" >Click to get Data</button><br><br>
+
+<select >
+    <option value="">Details Of User</option>
+    <option *ngFor="let display of userDetails ">{{display.name}}</option>
+</select>

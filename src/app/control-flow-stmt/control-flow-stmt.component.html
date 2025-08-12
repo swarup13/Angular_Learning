@@ -1,0 +1,55 @@
+<p>control-flow-stmt works!</p>
+
+<div class="container">
+
+    <div class="row">
+
+        @if(isDivVisible){
+        <div class="col-6"
+            style="width: 150px; height: 150px; background-color: yellow; display: flex; text-align: center; align-items: center;">
+
+            <p>if condition check</p>
+        </div>
+        }
+
+
+<!-- below @if @else block -->
+
+      @if(isDiv2){
+
+         <div class="col-6" style="width: 150px; height: 150px; background-color: orange; margin-left: 200px; display: flex; justify-content: center; align-items: center;">
+
+              <p>if block works</p>
+        </div>
+      }@else(){
+        <div class="col-6" style="width: 150px; height: 150px; background-color: bisque; margin-left: 200px; display: flex; justify-content: center; align-items: center;">
+
+              <p> else block works</p>
+        </div>
+      }
+
+         
+
+
+        
+        
+       
+    </div>
+
+    <button (click)="onToggle()" class="mt-5 btn btn-success" style="margin-left: 350px;">Click Once!</button>
+
+
+    <div class="ms-2">
+
+        <button class="me-3 btn btn-danger" (click)="onHide()">Hide</button>
+        <button class="btn btn-warning" (click)="onShow()">Show</button>
+
+
+    </div>
+
+
+
+
+    
+
+</div>

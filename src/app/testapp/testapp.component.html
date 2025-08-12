@@ -1,0 +1,22 @@
+<p>testapp works!</p>
+
+
+
+<div class="card text-bg-light mb-3" style="max-width: 18rem;" *ngFor="let r of res let i = index" style="width:100%"
+ [ngClass]="{ 'bg-warning': i % 2 !== 0, 'bg-light': i % 2 === 0 }">
+    <div class="cards" >
+  <div class="card-header">Details</div>
+  <div class="card-body" >
+    userId
+   <p>{{r.userId}}</p> 
+   <p>{{r.id}}</p>
+   <p>{{r.title}}</p>
+   <p> {{r.body}}</p>
+    
+    
+   
+  </div>
+  </div>
+</div>
+
+

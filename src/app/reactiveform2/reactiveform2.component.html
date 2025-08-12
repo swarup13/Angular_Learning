@@ -1,0 +1,146 @@
+<p>reactiveform2 works!</p>
+
+
+<div class="container">
+    <form [formGroup]="userObj">
+
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="username" [ngClass]="{
+                'is-invalid': userObj.controls['username'].invalid && (userObj.controls['username'].touched || userObj.controls['username'].dirty)
+            }">
+
+
+                <div class="text-danger mt-1">
+                    <span
+                        *ngIf="(userObj.controls['username'].touched || userObj.controls['username'].dirty) && (userObj.controls['username'].errors?.['required'])">
+                        This Field is Required!
+                    </span>
+
+                    <span
+                        *ngIf="(userObj.controls['username'].touched || userObj.controls['username'].dirty) && (userObj.controls['username'].errors?.['minlength'])">
+
+                        The lenght Should be greter than 3
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" formControlName="password" [ngClass]="{
+                    'is-invalid': userObj.controls['password'].invalid && (userObj.controls['password'].touched || userObj.controls['password'].dirty)
+                }">
+
+                <div class="text-danger mt-2">
+                    <span
+                        *ngIf="(userObj.controls['password'].touched || userObj.controls['password'].dirty) && userObj.controls['password'].errors?.['required']">
+                        This Field is Required
+                    </span>
+
+                    <span
+                        *ngIf="(userObj.controls['password'].touched || userObj.controls['password'].dirty) && userObj.controls['password'].errors?.['maxlength']">
+                        Password has 8 letters limit
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email" [ngClass]="{
+                    'is-invalid': userObj.controls['email'].invalid && (userObj.controls['email'].touched || userObj.controls['email'].dirty)
+                }">
+
+
+                <div class="text-danger">
+                    <span
+                        *ngIf="(userObj.controls['email'].touched || userObj.controls['email'].dirty) && userObj.controls['email'].errors?.['required']">
+
+                        This Field is Required
+                    </span>
+                    <span
+                        *ngIf="(userObj.controls['email'].touched || userObj.controls['email'].dirty) &&  userObj.controls['email'].errors?.['email']">
+                        please Enter valid email
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <label class="form-label">Gender</label>
+                <select class="form-select" formControlName="gender">
+                    <option value="">select option</option>
+                    <option *ngFor="let g of selectedGender" [value]="g">{{g}}</option>
+                </select>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <label class="form-label">Country</label>
+                <select class="form-select" formControlName="country">
+                    <option value="">Select Option</option>
+                    <option *ngFor="let c of selectedCountry" [value]="c">{{c}}</option>
+                </select>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <div class="mt-5" style="margin-left: 30%;">
+            <button class="btn btn-success ms-4 me-5" (click)="onSubmit()">Save</button>
+            <button class="btn btn-warning " (click)="reset()">Reset</button>
+        </div>
+
+    </form>
+
+
+    <!-- TO SHOW SINGLE CARD AFTER SUBMIT -->
+    <!-- <div *ngIf="finalObj" class="card mt-5 border-primary" style="max-width: 24rem; margin-left: 30%;">
+  <div class="card-header bg-primary text-white">
+    Submitted Details
+  </div>
+  <div class="card-body text-dark">
+    <p><strong>Username:</strong> {{ finalObj.username }}</p>
+    <p><strong>Email:</strong> {{ finalObj.email }}</p>
+    <p><strong>Password:</strong> {{ finalObj.password }}</p>
+    <p><strong>Gender:</strong> {{ finalObj.gender }}</p>
+    <p><strong>Country:</strong> {{ finalObj.country }}</p>
+  </div>
+</div> -->
+
+
+
+
+    <div *ngFor="let item of finalAllObj let i = index" class="card mt-5 border-primary"
+        style="max-width: 24rem; margin-left: 30%;">
+        <div class="card-header bg-primary text-white">
+            Submitted Details <p>User {{i+1}}</p>
+        </div>
+        <div class="card-body text-dark">
+            <p><strong>Username:</strong> {{ finalObj.username }}</p>
+            <p><strong>Email:</strong> {{ finalObj.email }}</p>
+            <p><strong>Password:</strong> {{ finalObj.password }}</p>
+            <p><strong>Gender:</strong> {{ finalObj.gender }}</p>
+            <p><strong>Country:</strong> {{ finalObj.country }}</p>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+<footer>
+    <div style="margin-top: 40%; margin-left: 20%;">
+        <button class="btn btn-primary" (click)="goTo()">Navigate To Reactive Form  From .ts click event </button>
+    </div>
+</footer>
