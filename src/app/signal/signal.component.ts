@@ -10,6 +10,10 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
 })
 export class SignalComponent {
 
+  constructor() {
+    console.log('signal introduced in Angular 17');
+  }
+  
 
      //how we create signal
 
